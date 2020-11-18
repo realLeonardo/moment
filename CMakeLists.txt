@@ -3,4 +3,19 @@ project(moment)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(moment SHARED src/moment.h test/main.cpp)
+set(PROJECT_HEADERS
+        src/moment.h
+        src/moment_utils.h)
+
+set(PROJECT_SOURCES
+        src/moment.cpp
+        src/moment_utils.cpp
+        )
+
+set(PROJECT_TESTCASES
+        test/chrono-test.h
+        test/main.cpp
+        )
+
+# add_library(moment SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
+add_executable(moment_e ${PROJECT_HEADERS} ${PROJECT_SOURCES} ${PROJECT_TESTCASES})
