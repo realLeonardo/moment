@@ -29,8 +29,10 @@ moment::moment(std::string time_str) {
   this->init(t);
 }
 
+// 拷贝构造函数
 moment::moment(moment& m) { this->init(m._timestamp); }
 
+// 拷贝赋值操作符
 moment& moment::operator=(moment& m) {
   this->init(m._timestamp);
 

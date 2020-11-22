@@ -17,5 +17,7 @@ set(PROJECT_TESTCASES
         test/main.cpp
         )
 
-# add_library(moment SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
+# add_library(moment STATIC ${PROJECT_HEADERS} ${PROJECT_SOURCES})
 add_executable(moment_e ${PROJECT_HEADERS} ${PROJECT_SOURCES} ${PROJECT_TESTCASES})
+
+# target_link_libraries(moment ${CMAKE_SOURCE_DIR}/libmoment.a)
